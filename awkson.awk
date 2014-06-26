@@ -67,7 +67,7 @@ function process(from, to, reply_to, msg) {
 	if(tolower(msg) ~ /(^| )(2|zwei)($|[^0-9a-z])/)
 		response = response "Zwe! "
 
-	if(msg ~ /(^| )11($|[^0-9])/)
+	if(tolower(msg) ~ /(^| )(11|elf)($|[^0-9])/)
 		response = response "Ölf! "
 
 	if(tolower(msg) ~ /(^| )laptop($|[^a-z0-9])/)
