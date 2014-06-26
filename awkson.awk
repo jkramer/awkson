@@ -79,5 +79,13 @@ function process(from, to, reply_to, msg) {
 	if(tolower(msg) ~ /(^| )minuten?($|[^a-z0-9])/)
 		response = response "Minütchen! "
 
+	if(tolower(msg) ~ /freitag/) {
+		"date +%u" | getline day
+		if(day == "5")
+			response = response "Yaaay! Es ist Freitag! "
+		else
+			response = response "Meh. Leider noch nicht Freitag."
+	}
+
 	send("PRIVMSG " reply_to " :" response)
 }
