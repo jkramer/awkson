@@ -68,13 +68,16 @@ function process(from, to, reply_to, msg) {
 		response = response "Zwe! "
 
 	if(tolower(msg) ~ /(^| )(11|elf)($|[^0-9])/)
-		response = response "Ölf! "
+		response = response "Ölf! Also: eins-eins!"
 
 	if(tolower(msg) ~ /(^| )laptop($|[^a-z0-9])/)
 		response = response "Läppie! "
 
 	if(tolower(msg) ~ /(^| )fitnessstudio($|[^a-z0-9])/)
 		response = response "Fitti! "
+
+	if(tolower(msg) ~ /(^| )brennt($|[^a-z0-9])/)
+		response = response "Jetzt heißt es: Zähnchen zusammenbeißen! "
 
 	if(tolower(msg) ~ /(^| )minuten?($|[^a-z0-9])/)
 		response = response "Minütchen! "
