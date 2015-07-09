@@ -1,3 +1,4 @@
+# vim:noexpandtab
 #
 # To run:
 # NICK=nick REAL_NAME='Ronald Reagan' CHANNEL=channel_without_hash CHANNEL_PASSWORD=password \
