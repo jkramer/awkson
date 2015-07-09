@@ -2,7 +2,7 @@
 #
 # To run:
 # NICK=nick REAL_NAME='Ronald Reagan' CHANNEL=channel_without_hash CHANNEL_PASSWORD=password \
-#   socat OPENSSL:irc.hackint.org:9999,verify=0 EXEC:'awk -f awkson.awk'
+#   socat OPENSSL:irc.hackint.org:9999,verify=0 EXEC:'gawk -f awkson.awk'
 #
 
 BEGIN {
@@ -84,8 +84,8 @@ function process(from, to, reply_to, msg) {
 		response = response "Minütchen! "
 
 	if(tolower(msg) ~ /freitag/) {
-		"date +%u" | getline day
-		if(day == "5") {
+		day = strftime("%u")
+		if(day ~ /^5$/) {
 			response = response "Yaaay! Es ist Freitag! "
 		}
 		else {
